@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>inbuilt filters</title>
+  </head>
+  <body>
+    <h1>Using upper filter and date:"d-m-y"</h1>
+    {% for item in filter_list %}
+    <ul>
+      <li>{{item.name|upper}}</li>
+      <li>{{item.subject|upper}}</li>
+      <li>{{item.department|upper}}</li>
+      <li>{{item.date|date:"d-m-y"}}</li>
+    </ul>
+    <hr>
+    {% endfor %}
+    <hr>
+    <h1>Using lower filter and timesince</h1>
+    {% for item in filter_list %}
+    <ul>
+      <li>{{item.name|lower}}</li>
+      <li>{{item.subject|lower}}</li>
+      <li>{{item.department|lower}}</li>
+      <li>{{item.date|timesince}}</li>
+    </ul>
+    <hr>
+    {% endfor %}
+    <hr>
+    <h1>Using title filter and timesince</h1>
+    {% for item in filter_list %}
+    <ul>
+      <li>{{item.name|title}}</li>
+      <li>{{item.subject|title}}</li>
+      <li>{{item.department|title}}</li>
+      <li>{{item.date|timesince}}</li>
+    </ul>
+    <hr>
+    {% endfor %}
+    <hr>
+    <h1>Using add: filter and timesince</h1>
+    {% for item in filter_list %}
+    <ul>
+      <li>{{item.name|add:" pvt ltd"}}</li>
+      <li>{{item.subject|title}}</li>
+      <li>{{item.department|title}}</li>
+      <li>{{item.date|timesince}}</li>
+    </ul>
+    <hr>
+    {% endfor %}
+    <hr>
+  </body>
+</html>

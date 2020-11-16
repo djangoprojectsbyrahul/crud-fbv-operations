@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{% extends 'testapp/base.html' %}
+{% block body_block %}
+<h2>BEER <span style="color:cyan;">{{beer.brand}}</span> Details....</h2>
+<hr>
+<ul>
+  <li>
+    <h3>Beer Name: {{beer.brand}}</h3>
+  </li>
+  <li>
+    <h3>Beer Taste: {{beer.taste}}</h3>
+  </li>
+  <li>
+    <h3>Beer Color: {{beer.color}}</h3>
+  </li>
+  <li>
+    <h3>Beer Price: {{beer.price}}</h3>
+  </li>
+</ul>
+<br><br>
+<a href="/testapp/updateview/{{beer.id}}" class='btn btn-sm btn-warning'>Update</a>&nbsp&nbsp&nbsp&nbsp
+<a href="/testapp/deleteview/{{beer.id}}" class='btn btn-sm btn-danger'>Delete</a>&nbsp&nbsp&nbsp&nbsp
+<a href="/testapp" class='btn btn-sm btn-success'>Back To Home</a>
+{% endblock %}

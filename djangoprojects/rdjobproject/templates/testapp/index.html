@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static "css/demo5.css" %}">
+    <meta charset="utf-8">
+    <title>R Jobs Portal</title>
+  </head>
+  <body id="home">
+    <div class="container">
+      <div class="jumbotron">
+       <h1 class="display-4">Welcome to RahulSoft Jobs Portal</h1>
+       <p>Continuous job updates....</p>
+       <hr class="my-4">
+       <a class="btn btn-primary btn-lg bgr1" href="/testapp/punejobs" role="button">Pune Jobs</a>
+       <a class="btn btn-primary btn-lg bgr1" href="/testapp/mumbaijobs" role="button">Mumbai Jobs</a>
+       <a class="btn btn-primary btn-lg bgr1" href="/testapp/chennaijobs" role="button">Chennai Jobs</a>
+       <a class="btn btn-primary btn-lg bgr1" href="/testapp/bengjobs" role="button">Benglore Jobs</a>
+       <a class="btn btn-primary btn-lg bgr1" href="/testapp/hydjobs" role="button">Hyderabad Jobs</a>
+      </div>
+    </div>
+  </body>
+</html>

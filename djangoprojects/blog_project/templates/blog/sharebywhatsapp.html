@@ -1,0 +1,18 @@
+{% extends 'blog/base.html' %}
+{% block title_block %}SEND POST BY Whatsapp{% endblock %}
+{% block content %}
+{% if sent %}
+<h1>Email Sent Successfully!!!!</h1>
+<h2>Post with title "{{post.title}}" information shared by Whatsapp</h2>
+{% else %}
+<h1>Share Post: {{post.title}} By Whatsapp</h1>
+<form method="post">
+  <table>
+    {{form}}
+  </table>
+  {% csrf_token %}
+  <br><br>
+  <input type="submit" class='btn btn-sm btn-success' value="Send Message">
+</form>
+{% endif %}
+{% endblock %}

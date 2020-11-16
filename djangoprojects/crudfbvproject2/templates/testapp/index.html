@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{%extends 'testapp/base.html'%}
+{%block body_block%}
+<h1>Student Information Dashboard</h1>
+<hr>
+{%if students%}
+<table border="2">
+  <thead align="center">
+    <th>Student Rollno</th>
+    <th>Student Name</th>
+    <th>Student Marks</th>
+    <th>Student Address</th>
+    <th>Action</th>
+  </thead>
+  {%for student in students%}
+  <tr align="center">
+    <td>{{student.srollno}}</td>
+    <td>{{student.sname}}</td>
+    <td>{{student.smarks}}</td>
+    <td>{{student.saddr}}</td>
+    <td><a href="/testapp/update/{{student.id}}" class="btn btn-sm btn-info">Update</a>&nbsp&nbsp<a href="/testapp/delete/{{student.id}}" class="btn btn-sm btn-danger">Delete</a></td>
+  </tr>
+  {%endfor%}
+</table>
+{%else%}
+<p>No Record found for Student....</p>
+{%endif%}
+<br><br>
+<a href="/testapp/create" class="btn btn-sm btn-success">Insert Student Record</a>
+{%endblock%}

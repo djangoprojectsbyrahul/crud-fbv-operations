@@ -1,0 +1,20 @@
+{% extends 'blog/base.html' %}
+{% block title_block %}SEND POST BY MAIL{% endblock %}
+{% block content %}
+{% if sent %}
+<h1>Email Sent Successfully!!!!</h1>
+<h2>Post with title "{{post.title}}" information shared by email</h2><br><br>
+<a href="/rahulblog" class='btn btn-info btn-sm'>Go Back to Post List</a>
+{% else %}
+<h1>Share Post: {{post.title}} By Mail</h1>
+<form method="post">
+  <table>
+    {{form}}
+  </table>
+  {% csrf_token %}
+  <br><br>
+  <input type="submit" class='btn btn-sm btn-success' value="SEND MAIL"> &nbsp&nbsp&nbsp&nbsp
+  <a href="/rahulblog" class='btn btn-sm btn-success'>CANCEL</a>
+</form>
+{% endif %}
+{% endblock %}

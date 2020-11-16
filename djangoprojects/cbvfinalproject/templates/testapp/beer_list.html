@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% extends 'testapp/base.html' %}
+{% block body_block %}
+<h2>BEER List</h2>
+<hr>
+{% if beer_list %}
+<table border="2" style="border-color:white">
+  <thead align="center">
+    <th>Beer Name</th>
+    <th>Details</th>
+    <th>Update</th>
+    <th>Delete</th>
+  </thead>
+  {% for beer in beer_list %}
+  <tr align="center">
+    <td>{{beer.brand}}</td>
+    <td><a href="/testapp/detailview/{{beer.id}}" class='btn btn-sm btn-info'>Details</a></td>
+    <td><a href="/testapp/updateview/{{beer.id}}" class='btn btn-sm btn-warning'>Update</a></td>
+    <td><a href="/testapp/deleteview/{{beer.id}}" class='btn btn-sm btn-danger'>Delete</a></td>
+  </tr>
+  {% endfor%}
+</table>
+{% else %}
+<p>No Beer record found!!!!</p>
+{% endif %}
+<br><br>
+<a href="/testapp/createview" class='btn btn-sm btn-success'>Add New Beer Record</a>
+{% endblock %}

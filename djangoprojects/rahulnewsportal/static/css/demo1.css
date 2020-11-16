@@ -1,0 +1,28 @@
+.container .jumbotron{
+  background: #7952b3;
+  color:white;
+  margin-top: 150px;
+  text-align: center;
+}
+body{
+  background:url(https://images.unsplash.com/photo-1583482677263-dff8134ace08?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1566&q=80);
+  background-repeat: no-repeat;
+}
+#newshead{
+  text-align: center;
+  color:white;
+}
+li{
+  color:yellow;
+  font-size: 4ex;
+}
+a{
+  color:green;
+  background: black;
+}
+img{
+  height: 300px;
+  width: 350px;
+  margin:3%;
+  border: solid 5px blue;
+}

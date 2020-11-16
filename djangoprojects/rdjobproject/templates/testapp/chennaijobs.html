@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="stylesheet" href="{% static "css/demo5.css" %}">
+    <meta charset="utf-8">
+    <title>Chennai Jobs</title>
+  </head>
+  <body>
+    <h1>Chennai Jobs Information</h1>
+    <img src="{% static "images/chn1.jpg" %}" alt="coming soon....">
+    <img src="{% static "images/chn2.jpg" %}" alt="coming soon....">
+    <img src="{% static "images/chn3.jpg" %}" alt="coming soon...."><br>
+    <a href="/testapp">HOME</a>
+    {% if chennai_jobs %}
+    <table>
+      <thead>
+        <th>DATE</th>
+        <th>COMPANY</th>
+        <th>TITLE</th>
+        <th>ELIGIBILITY</th>
+        <th>ADDRESS</th>
+        <th>EMAIL</th>
+        <th>PHONE NUMBER</th>
+      </thead>
+      {% for job in chennai_jobs %}
+      <tr>
+          <td>{{job.date}}</td>
+          <td>{{job.company}}</td>
+          <td>{{job.title}}</td>
+          <td>{{job.eligibility}}</td>
+          <td>{{job.address}}</td>
+          <td>{{job.email}}</td>
+          <td>{{job.phonenumber}}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  {% else %}
+  <p>No Record found for Pune</p>
+  {% endif %}
+  </body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="stylesheet" href="{% static "css/demo1.css" %}">
+    <meta charset="utf-8">
+    <title>News</title>
+  </head>
+  <body>
+    <h1 id="newshead">{{head_msg}}</h1>
+    <hr>
+    <ul>
+      <li>{{msg_first}}</li>
+      <li>{{msg_second}}</li>
+      <li>{{msg_third}}</li>
+    </ul>
+    <a href="/newsapp">home page</a><hr>
+    <img src="{%static "images/blenders res glass.jpg"%}" alt="">
+    <img src="{%static "images/sunny.jpg"%}" alt="">
+    <img src="{%static "images/thennow8.jpg"%}" alt="">
+  </body>
+</html>

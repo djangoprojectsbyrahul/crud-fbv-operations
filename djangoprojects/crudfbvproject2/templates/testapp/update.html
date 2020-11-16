@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{%extends 'testapp/base.html'%}
+{%block body_block%}
+<h1>Student Update Record Form</h1>
+<hr>
+<form method="post">
+  <table>
+    <tr>
+      <td>Student Rollno</td>
+      <td><input type="text" name="srollno" value="{{student.srollno}}"></td>
+    </tr>
+    <tr>
+      <td>Student Name</td>
+      <td><input type="text" name="sname" value="{{student.sname}}"></td>
+    </tr>
+    <tr>
+      <td>Student Marks</td>
+      <td><input type="text" name="smarks" value="{{student.smarks}}"></td>
+    </tr>
+    <tr>
+      <td>Student Address</td>
+      <td><input type="text" name="saddr" value="{{student.saddr}}"></td>
+    </tr>
+  </table>
+  <br><br>
+  <input type="submit" name="" class="btn btn-sm btn-success" value="Update Record">
+  {%csrf_token%}
+</form>
+{%endblock%}

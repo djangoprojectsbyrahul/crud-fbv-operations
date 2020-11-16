@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="stylesheet" href="{% static "css/demo3.css" %}">
+    <meta charset="utf-8">
+    <title>EMP INFO</title>
+  </head>
+  <body>
+    <h1>Employee Information</h1><hr>
+    {% if emp_data %}
+      <table>
+        <thead>
+          <th>EMP NO</th>
+          <th>EMP NAME</th>
+          <th>EMP SALARY</th>
+          <th>EMP ADDRESS</th>
+        </thead>
+        {% for emp in emp_data %}
+          <tr>
+            <td>{{emp.eno}}</td>
+            <td>{{emp.ename}}</td>
+            <td>{{emp.esal}}</td>
+            <td>{{emp.eaddr}}</td>
+          </tr>
+        {% endfor %}
+      {% else %}
+        <p>No Employee record found!!!!</p>
+      {% endif %}
+      </table>
+      <a id='homelink' href="/testapp">HOME</a>
+  </body>
+</html>

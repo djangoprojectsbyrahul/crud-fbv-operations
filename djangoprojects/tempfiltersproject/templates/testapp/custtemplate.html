@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Customized templates</title>
+  </head>
+  <body>
+    <h1>Using customized filters</h1>
+    {% load cust_filters %}
+    {% for item in filter_list %}
+    <ul>
+      <li>{{item.name|t_n:2|upper}}</li>
+      <li>{{item.subject}}</li>
+      <li>{{item.department}}</li>
+      <li>{{item.date|date:'d-m-y'}}</li>
+    </ul>
+    {% endfor %}
+  </body>
+</html>

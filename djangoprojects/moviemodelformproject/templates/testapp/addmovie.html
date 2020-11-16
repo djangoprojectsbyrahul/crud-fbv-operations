@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en" dir="ltr">
+
+<head>
+  <link rel="stylesheet" href="{% static "css/moviestyle.css" %}">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@900&display=swap" rel="stylesheet">
+  <meta charset="utf-8">
+  <title>Add Movies Form</title>
+</head>
+
+<body>
+  <div class="container" align='center'>
+    <div class="jumbotron">
+      <h1>Add your favourite movie here....</h1>
+      <hr>
+      <form method="post">
+        {{form.as_p}}
+        {% csrf_token %}
+        <input type="submit" name="" value="Add Movie">
+      </form>
+    </div>
+  </div>
+</body>
+
+</html>

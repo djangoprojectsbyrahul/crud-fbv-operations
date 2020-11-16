@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+{% load blog_tags %}
+{% load staticfiles %}
+<html lang="en" dir="ltr">
+
+<head>
+  <link rel="stylesheet" href="{% static "css/blog.css" %}">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <meta charset="utf-8">
+  <title>{% block title_block %}{% endblock %}</title>
+</head>
+
+<body>
+  <div class="content">
+    {% block content %}
+    {% endblock %}
+  </div>
+  <div class="sidebar">
+    <h2>RAHUL's BLOG</h2>
+    <p><h5>Total Number of posts published upto today: <span id='pcount'>{% my_tag %}</span></h5></p>
+    <h3>Latest Posts:</h3>{% show_latest_posts 4 %}
+    <h3>Most Commented Posts:</h3>
+    {% get_most_commented_posts as most_commented_posts %}
+    <ul>
+      {% for post in most_commented_posts %}
+      <li> <a href="{{post.get_absolute_url}}">{{post.title}}</a></li>
+      {% endfor %}
+    </ul>
+    <hr class='newhr'>
+    <h5> <span id='note'><img src='https://angular.io/assets/images/logos/angularjs/AngularJS-Shield.svg' height="20" width="20"> Angular.....Coming soon!!!!</span> </h5>
+  </div>
+</body>
+
+</html>

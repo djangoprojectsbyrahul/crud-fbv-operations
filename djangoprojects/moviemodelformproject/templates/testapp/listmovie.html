@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en" dir="ltr">
+
+<head>
+  <link rel="stylesheet" href="{% static "css/moviestyle.css" %}">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@900&display=swap" rel="stylesheet">
+  <meta charset="utf-8">
+  <title>View Movie List</title>
+</head>
+
+<body>
+  <div class="container" align='center'>
+    <div class="jumbotron">
+      <h1>Movie List</h1>
+      <hr>
+      <a href="/testapp">HOME</a>
+      {% if movie_list %}
+      <table>
+        <thead>
+          <th>Release Date</th>
+          <th>Movie Name</th>
+          <th>Hero</th>
+          <th>Actress</th>
+          <th>Rating</th>
+        </thead>
+        {% for movie in movie_list %}
+        <tr>
+          <td>{{movie.rdate}}</td>
+          <td>{{movie.name}}</td>
+          <td>{{movie.hero}}</td>
+          <td>{{movie.actress}}</td>
+          <td>{{movie.rating}}</td>
+        </tr>
+        {% endfor %}
+      </table>
+      {% else %}
+      <p>No Movie Record Found.....</p>
+      {% endif %}
+    </div>
+  </div>
+</body>
+
+</html>

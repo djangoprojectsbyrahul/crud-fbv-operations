@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Employee Register form</title>
+</head>
+
+<body>
+  <div class="container" align='center'>
+    <div class="jumbotron">
+      <form class="" action="/thankyou.html" method="post">
+        <h1>Employee Registration form</h1>
+        <hr>
+        {{form.as_p}}
+        {% csrf_token %}
+        <input type="submit" name="" value="Register">
+        <p></p><input type="reset" name="" value="Reset">
+      </form>
+    </div>
+  </div>
+</body>
+
+</html>

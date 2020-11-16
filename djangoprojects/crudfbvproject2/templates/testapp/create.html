@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+{%extends 'testapp/base.html'%}
+{%block body_block%}
+<h1>Student Record Insertion Form</h1>
+<hr>
+<form method="post">
+  <table>
+    {{form}}
+  </table>
+  {%csrf_token%}
+  <input type="submit" name="" class="btn btn-sm btn-info" value="Insert Record">
+</form>
+{%endblock%}

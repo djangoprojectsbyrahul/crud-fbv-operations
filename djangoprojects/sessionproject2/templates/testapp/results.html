@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>RESULT PAGE</title>
+</head>
+
+<body>
+  <h1>Thanks for Registration....Plz confirm Details....</h1>
+  <hr>
+  {% for key,value in request.session.items %}
+  <ul>
+    <li>
+      <h3>{{key|upper}}:{{value|title}}</h3>
+    </li>
+  </ul>
+  {% endfor %}
+</body>
+
+</html>

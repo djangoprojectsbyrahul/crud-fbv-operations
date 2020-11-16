@@ -1,0 +1,27 @@
+{% extends 'blog/base.html' %}
+{% block title_block %}RAHUL's BLOG HOME PAGE {% endblock %}
+{% block content %}
+<h1>RAHUL's BLOG</h1>
+{% if tag %}
+<a href="/rahulblog" class='btn btn-sm btn-success'>BACK</a>
+<h2>Posts tagged with '{{tag.name}}' </h2>
+{% endif %}
+{% for post in post_list %}
+<h2><a href="{{post.get_absolute_url}}" class='btn btn-lg btn-primary btn-block'>{{post.title}}</a></h2>
+<p id='date'>Published on {{post.publish}} by {{post.author|title}}</p>
+<p>Tags:
+  {% for tag in post.tags.all %}
+
+  <a href="{% url 'post_list_by_tag_name' tag.slug %}" class="btn btn-sm btn-warning">{{tag.name}}</a>
+
+  {% endfor %}
+</p>
+<hr>
+{{post.body|truncatewords:30|linebreaks}}
+<hr>
+{% endfor %}
+<br><br>
+{% include 'blog/pagination.html' with page=post_list %}
+<!-- {% include 'blog/pagination.html' with page=page_obj %} -->
+<!-- Above line for pagination nav bar using CBV where default object is page_obj -->
+{% endblock %}

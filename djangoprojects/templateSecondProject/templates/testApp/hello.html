@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <style>
+      h1{
+        color:Red;
+      }
+      table{
+        border: 5px solid blue;
+        margin:auto;
+      }
+      th{
+        background:black;
+        color:blue;
+      }
+      tr:nth-of-type(odd){
+        background:yellow;
+        color:red;
+      }
+      tr:nth-of-type(even){
+        background:green;
+        color:orange;
+      }
+    </style>
+    <meta charset="utf-8">
+    <title>Templates App Second</title>
+  </head>
+  <body>
+    <h1>Hello {{name}} this page is from templates tag</h1>
+    <table>
+      <thead>
+        <th>Name</th>
+        <th>Age</th>
+      </thead>
+      <tr>
+        <td>Pratima</td>
+        <td>27</td>
+      </tr>
+      <tr>
+        <td>Pranita</td>
+        <td>25</td>
+      </tr>
+      <tr>
+        <td>Malaika</td>
+        <td>46</td>
+      </tr>
+      <tr>
+        <td>Mallika</td>
+        <td>43</td>
+      </tr>
+    </table>
+  </body>
+</html>
