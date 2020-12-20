@@ -1,2 +1,0 @@
-step 1: push
-step 2: delete and push
